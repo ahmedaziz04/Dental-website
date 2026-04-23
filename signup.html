@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIGN UP PAGE</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style-signup.css" />
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAV BAR ===== -->
+  <nav class="site-nav">
+    <ul class="nav-links">
+      <li><a href="#about">À propos de nous</a></li>
+      <div class="nav-divider"></div>
+      <li><a href="#contact">Nos contacts</a></li>
+      <div class="nav-divider"></div>
+      <li><a href="#services">Nos services</a></li>
+    </ul>
+    <button class="btn-back" onclick="history.back()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      Retour
+    </button>
+  </nav>
+
+  <!-- ===== HEADER LOGO ===== -->
+  <header class="site-header">
+    <div class="tooth-icon">
+      <img src="assets/logo.png" alt="logo">
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="page-main">
+
+    <!-- Left tagline -->
+    <section class="tagline-section">
+      <h1 class="tagline">
+        Confidence,
+        starts with a smile.
+      </h1>
+    </section>
+
+    <!-- Right signup card -->
+    <section class="login-card login-card--signup" aria-label="Formulaire d'inscription">
+      <h2 class="card-title">SIGN UP</h2>
+
+      <div class="field-group">
+        <label for="name" class="field-label">Name</label>
+        <input type="text" id="name" name="name" class="field-input" autocomplete="given-name" />
+      </div>
+
+      <div class="field-group">
+        <label for="surname" class="field-label">Surname</label>
+        <input type="text" id="surname" name="surname" class="field-input" autocomplete="family-name" />
+      </div>
+
+      <div class="field-group">
+        <label for="dateNaiss" class="field-label">Date</label>
+        <input type="date" id="dateNaiss" name="dateNaiss" class="field-input" />
+      </div>
+
+      <div class="field-group">
+        <label for="email" class="field-label">E-mail</label>
+        <input type="email" id="email" name="email" class="field-input" autocomplete="email" />
+      </div>
+
+      <div class="field-group">
+        <label for="password" class="field-label">Password</label>
+        <input type="password" id="password" name="password" class="field-input" autocomplete="new-password" />
+      </div>
+
+      <div class="card-actions card-actions--center">
+        <button type="button" class="btn-signup">SIGN UP</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-brand-name">Cabinet Dentaire</span>
+        <span class="footer-brand-tagline">Confidence, starts with a smile.</span>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Nos Services</span>
+        <a href="#">Détartrage & Blanchiment</a>
+        <a href="#">Orthodontie</a>
+        <a href="#">Implants Dentaires</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Horaires</span>
+        <span>Lun – Ven : 08h00 – 18h00</span>
+        <span>Samedi : 09h00 – 13h00</span>
+        <span>Dimanche : Fermé</span>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Contact</span>
+        <span>📞 58 648 255</span>
+        <span>✉️ doctor.dentiste@doctor.udoc.tn</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Cabinet Dentaire — Tous droits réservés</span>
+      <nav class="footer-legal">
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Mentions légales</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/signup.js"></script>
+</body>
+</html>

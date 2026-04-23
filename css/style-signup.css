@@ -1,0 +1,52 @@
+/* ============================================================
+   LOGIN CARD — variante SIGNUP
+   ============================================================ */
+.login-card--signup {
+  margin-top: 0;
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+
+.login-card--signup .field-group {
+  margin-bottom: 18px;
+}
+
+.login-card--signup .card-title {
+  margin-bottom: 28px;
+}
+
+/* ============================================================
+   CARD ACTIONS — centré (signup)
+   ============================================================ */
+.card-actions--center {
+  justify-content: center;
+}
+
+/* ============================================================
+   BOUTON SIGN UP
+   ============================================================ */
+.btn-signup {
+  background: var(--input-bg);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  width: 60%;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-signup:hover {
+  background: var(--silver-light);
+  transform: translateY(-1px);
+}
+
+.btn-signup:active {
+  transform: translateY(0);
+}

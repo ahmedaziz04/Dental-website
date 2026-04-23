@@ -1,0 +1,60 @@
+/* ============================================================
+   LOGIN CARD — position verticale
+   ============================================================ */
+.login-card {
+  margin-top: -80px;
+}
+
+/* ============================================================
+   BOUTON CONNECT
+   ============================================================ */
+.btn-connect {
+  background: var(--input-bg);
+  border: none;
+  border-radius: 8px;
+  padding: 6px 15px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  width: 40%;
+}
+
+.btn-connect:hover {
+  background: var(--silver-light);
+  transform: translateY(-1px);
+}
+
+.btn-connect:active {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   BOUTON FORGOT PASSWORD
+   ============================================================ */
+.btn-forgot {
+  background: var(--input-bg);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  width: 60%;
+}
+
+.btn-forgot:hover {
+  background: var(--silver-light);
+  transform: translateY(-1px);
+}
+
+.btn-forgot:active {
+  transform: translateY(0);
+}
