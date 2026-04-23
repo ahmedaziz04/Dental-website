@@ -61,8 +61,17 @@
       </div>
 
       <div class="field-group">
-        <label for="dateNaiss" class="field-label">Date</label>
-        <input type="date" id="dateNaiss" name="dateNaiss" class="field-input" />
+        <label class="field-label">Date</label>
+        <div class="date-split">
+          <input type="number" class="field-input date-part" id="dateDay" name="dateDay"
+            placeholder="JJ" min="1" max="31" />
+          <span class="date-sep">/</span>
+          <input type="number" class="field-input date-part" id="dateMonth" name="dateMonth"
+            placeholder="MM" min="1" max="12" />
+          <span class="date-sep">/</span>
+          <input type="number" class="field-input date-part date-part--year" id="dateYear" name="dateYear"
+            placeholder="AAAA" min="1900" max="2026" />
+        </div>
       </div>
 
       <div class="field-group">
@@ -78,6 +87,9 @@
       <div class="card-actions card-actions--center">
         <button type="button" class="btn-signup">SIGN UP</button>
       </div>
+      <p class="card-login-link">
+        Already have an account ? <a href="login.html">Log in</a>
+      </p>
     </section>
 
   </main>

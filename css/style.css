@@ -36,10 +36,15 @@ body {
   cursor: none;
 }
 
+
 /* ============================================================
-   BACKGROUND GRADIENT
+   BACKGROUND GRADIENT — fixed via pseudo-élément
    ============================================================ */
-body {
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background:
     radial-gradient(ellipse 55% 80% at 62% 45%,
       rgba(240, 210, 100, 0.55) 0%,
@@ -160,8 +165,8 @@ body {
   border: 2px solid var(--card-border);
   border-radius: 18px;
   padding: 46px 48px 48px;
-  width: 360px;
-  min-width: 320px;
+  width: 460px;        /* ← était 360px */
+  min-width: 380px;    /* ← était 320px */
   flex-shrink: 0;
   box-shadow:
     0 8px 40px rgba(0,0,0,0.45),
