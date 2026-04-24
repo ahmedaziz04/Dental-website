@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forgot password</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/forgot.css" />
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAV BAR ===== -->
+  <nav class="site-nav">
+    <ul class="nav-links">
+      <li><a href="#about">About us</a></li>
+      <div class="nav-divider"></div>
+      <li><a href="#contact">Our contacts</a></li>
+      <div class="nav-divider"></div>
+      <li><a href="#services">Our services</a></li>
+    </ul>
+    <button class="btn-back" onclick="history.back()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      Back
+    </button>
+  </nav>
+
+  <!-- ===== HEADER LOGO ===== -->
+  <header class="site-header">
+    <div class="tooth-icon">
+      <img src="assets/logo.png" alt="logo">
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="page-main">
+
+    <!-- Left tagline -->
+    <section class="tagline-section">
+      <h1 class="tagline">
+        Your smile,
+        is always protected.
+      </h1>
+      <p class="tagline-sub">Get the acces to your account in seconds.</p>
+    </section>
+
+    <!-- Right forgot card -->
+    <section class="login-card forgot-card" aria-label="Récupération de mot de passe">
+
+      <!-- STEP INDICATOR -->
+      <div class="step-indicator">
+        <div class="step-dot active" id="dot-1">
+          <span class="step-num">1</span>
+          <span class="step-label">Identity</span>
+        </div>
+        <div class="step-line" id="line-1"></div>
+        <div class="step-dot" id="dot-2">
+          <span class="step-num">2</span>
+          <span class="step-label">Verification</span>
+        </div>
+        <div class="step-line" id="line-2"></div>
+        <div class="step-dot" id="dot-3">
+          <span class="step-num">3</span>
+          <span class="step-label">New password</span>
+        </div>
+      </div>
+
+      <!-- ── ÉTAPE 1 : Identité ── -->
+      <div class="forgot-step" id="step-1">
+        <h2 class="card-title">Forgot password</h2>
+
+        <p class="step-desc">Put informations used while signing up. A Verification code will be sent to your e-mail address.</p>
+
+        <div class="field-group">
+          <label for="f-name" class="field-label">Name</label>
+          <input type="text" id="f-name" name="f-name" class="field-input" autocomplete="given-name" />
+        </div>
+
+        <div class="field-group">
+          <label for="f-surname" class="field-label">Surname</label>
+          <input type="text" id="f-surname" name="f-surname" class="field-input" autocomplete="family-name" />
+        </div>
+
+        <div class="field-group">
+          <label for="f-email" class="field-label">E-mail</label>
+          <input type="email" id="f-email" name="f-email" class="field-input" autocomplete="email" placeholder="exemple@gmail.com" />
+        </div>
+
+        <div class="card-actions">
+          <button type="button" class="btn-forgot-action" id="btn-send-code">
+            <span class="btn-text">SEND CODE</span>
+            <span class="btn-spinner" hidden>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+              </svg>
+            </span>
+          </button>
+        </div>
+
+        <p class="step-error" id="error-1" hidden></p>
+      </div>
+
+      <!-- ── ÉTAPE 2 : Code de vérification ── -->
+      <div class="forgot-step hidden" id="step-2">
+        <h2 class="card-title">VERIFICATION</h2>
+
+        <div class="email-sent-badge" id="email-sent-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Code was sent to <strong id="display-email"></strong>
+        </div>
+
+        <p class="step-desc">Put a 6-integer code which was sent to your mail. Check your spams.</p>
+
+        <!-- 6 digits code input -->
+        <div class="code-inputs" id="code-inputs">
+          <input type="text" class="code-digit" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+          <input type="text" class="code-digit" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+          <input type="text" class="code-digit" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+          <span class="code-sep">–</span>
+          <input type="text" class="code-digit" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+          <input type="text" class="code-digit" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+          <input type="text" class="code-digit" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+        </div>
+
+        <div class="resend-row">
+          <span class="resend-text">Didn't receive the code ?</span>
+          <button type="button" class="btn-resend" id="btn-resend">
+            Resend <span id="resend-timer">(30s)</span>
+          </button>
+        </div>
+
+        <div class="card-actions">
+          <button type="button" class="btn-forgot-action" id="btn-verify-code">VERIFY THE CODE</button>
+        </div>
+
+        <p class="step-error" id="error-2" hidden></p>
+      </div>
+
+      <!-- ── ÉTAPE 3 : Nouveau mot de passe ── -->
+      <div class="forgot-step hidden" id="step-3">
+        <h2 class="card-title">NEW PASSWORD</h2>
+
+        <p class="step-desc">Use a strong password which has at least 8 caracters, with upercase, integers and symbols.</p>
+
+        <div class="field-group">
+          <label for="f-newpass" class="field-label">Nouveau MDP</label>
+          <div class="pass-wrap">
+            <input type="password" id="f-newpass" name="f-newpass" class="field-input" autocomplete="new-password" placeholder="••••••••" />
+            <button type="button" class="btn-eye" data-target="f-newpass" aria-label="Afficher/masquer">
+              <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Password strength bar -->
+        <div class="strength-bar-wrap">
+          <div class="strength-bar" id="strength-bar">
+            <div class="strength-fill" id="strength-fill"></div>
+          </div>
+          <span class="strength-label" id="strength-label">—</span>
+        </div>
+
+        <div class="field-group" style="margin-top:18px">
+          <label for="f-confirm" class="field-label">confirm</label>
+          <div class="pass-wrap">
+            <input type="password" id="f-confirm" name="f-confirm" class="field-input" autocomplete="new-password" placeholder="••••••••" />
+            <button type="button" class="btn-eye" data-target="f-confirm" aria-label="Afficher/masquer">
+              <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+        <p class="match-hint" id="match-hint"></p>
+
+        <div class="card-actions">
+          <button type="button" class="btn-forgot-action" id="btn-save-pass">SAVE</button>
+        </div>
+
+        <p class="step-error" id="error-3" hidden></p>
+      </div>
+
+      <!-- ── ÉTAPE 4 : Succès ── -->
+      <div class="forgot-step hidden" id="step-success">
+        <div class="success-icon">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+            <circle cx="30" cy="30" r="28" stroke="#B8952A" stroke-width="2.5"/>
+            <path d="M18 30l9 9 15-18" stroke="#f5d87a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h2 class="card-title">PASSWORD WAS MODIFIED !</h2>
+        <p class="step-desc" style="text-align:center">Your password was modified succesfully.<br>You'll be redirected to the login page.</p>
+        <div class="redirect-bar-wrap">
+          <div class="redirect-bar" id="redirect-bar"></div>
+        </div>
+        <p class="redirect-txt">Redirection in <span id="redirect-count">5</span>s…</p>
+        <div class="card-actions">
+          <button type="button" class="btn-forgot-action" onclick="window.location.href='login.html'">GO TO CONNEXION</button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-brand-name">Dentist office</span>
+        <span class="footer-brand-tagline">Confidence, starts with a smile.</span>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Our Services</span>
+        <a href="#">Détartrage & Blanchiment</a>
+        <a href="#">Orthodontie</a>
+        <a href="#">Implants Dentaires</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Working hours</span>
+        <span>Mon – Fri : 08h00 – 18h00</span>
+        <span>Saturday : 09h00 – 13h00</span>
+        <span>Sunday : Closed</span>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Contact</span>
+        <span>📞 58 648 255</span>
+        <span>✉️ doctor.dentiste@doctor.udoc.tn</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Dentist office — All rights reserved</span>
+      <nav class="footer-legal">
+        <a href="#">confidentiality policy</a>
+        <a href="#">Legal mentions</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/forgot.js"></script>
+</body>
+</html>

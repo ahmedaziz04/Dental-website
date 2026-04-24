@@ -7,5 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Ripple sur les boutons exclusifs à login
   addRipple(qs('.btn-connect'));
-  addRipple(qs('.btn-forgot'));
+  // Redirection vers login.html
+  qs('.btn-forgot').addEventListener('click', () => {
+    window.location.href = 'forgot.html';
+  });
 });
